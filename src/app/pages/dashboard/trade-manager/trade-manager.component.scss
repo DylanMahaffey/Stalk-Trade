@@ -1,0 +1,15 @@
+.trade-display{
+    padding: 20px;
+    display: flex;
+}
+.offer{
+    width: 200px;
+    height: 300px;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.button{
+    justify-self: flex-end;
+}

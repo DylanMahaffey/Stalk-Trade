@@ -1,0 +1,9 @@
+<div class="conversation" 
+  *ngFor="let convo of messangers"
+  (click)="displayConversation(convo.id)">
+  <span *ngIf="convo.members[user.id].unread > 0">{{ convo.members[user.id].unread }}</span>
+  <p class="conversation-name">{{ messages.getMessangerName(convo.members) }}</p>
+  <hr>
+  <p class="conversation-details">Private conversation</p>
+ 
+</div>

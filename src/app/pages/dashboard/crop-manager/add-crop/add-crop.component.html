@@ -1,0 +1,32 @@
+<div class="container">
+    <form [formGroup]="newCrop">
+        <label>Crop Name</label><br>
+        <input type="text" formControlName="cropName"><br>
+        <label>Crop Type</label><br>
+        <select formControlName="cropType">
+            <option value="vegetable">Vegetable</option>
+            <option value="herb">Fruit</option>
+            <option value="herb">Herb</option>
+            <option value="produce">Produce</option>
+        </select><br>
+        <label>Catagory</label><br>
+        <input type="text" formControlName="catagory"><br>
+        <label>Variety</label><br>
+        <input type="text" formControlName="variety"><br>
+        <label>Image Location</label><br>
+        <input type="text" formControlName="imgSrc"><br>
+        <label>Have you harvested this crop yet?</label><br>
+        <span>Yes I have!</span>
+        <input type="checkbox" formControlName="harvested"><br>
+        <label>Harvest Date</label><br>
+        <input type="text" formControlName="harvestDate"><br>
+        <label>Harvest Quantity</label><br>
+        <input type="number" formControlName="harvestQuantity"><br>
+        <label>Crop Details</label><br>
+        <input type="text" formControlName="details"><br>
+    
+        <button class="button" (click)="submit()" *ngIf="newCrop.valid">    Submit  </button>
+    </form>
+
+    <img *ngIf="newCrop.value.imgSrc" [src]="newCrop.value.imgSrc" alt="">
+</div>

@@ -1,0 +1,36 @@
+.ratings{
+    display: flex;
+}
+.ratingStar{
+    width: 15px;
+}
+
+.profile-pic{
+    width: 200px;
+}
+
+.container{
+    display: flex;
+}
+
+.card{
+    border: 1px solid rgba(0, 0, 0, .4);
+    width: 100px;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.card-image{
+    width: 90px;
+    height: 90px;
+}
+.details{
+    text-align: center;
+    justify-self: flex-end;
+}
+.details:hover{
+    background: rgba(0, 0, 0, .3);
+}

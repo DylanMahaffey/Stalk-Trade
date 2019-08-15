@@ -1,0 +1,14 @@
+<form>
+    <p>{{ err }}</p>
+    <label for='loginEmail'>Email: </label><br>
+    <input type="text" id="loginEmail" name="email" [(ngModel)]="loggingIn.email">
+    <br><br>
+    <label for='loginPassword'>Password: </label><br>
+    <input type="password" id="loginPassword" name="password" [(ngModel)]="loggingIn.password">
+    <br>
+    <br>
+    
+    <a class="button primary" (click)="logIn()">Submit</a>
+    <a class="button" routerLink="/register">Register</a>
+</form>
+      

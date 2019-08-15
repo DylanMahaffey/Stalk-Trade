@@ -1,0 +1,8 @@
+<h2>Friends</h2>
+<div class="container">
+    <div class="friend-card" *ngFor="let friend of friends">
+        <p>{{ friend.firstName }} {{ friend.lastName }}</p>
+        <img class="friend-image" src="../../../../assets/Images/icons8-user-64.png" alt="anon">
+        <a routerLink="../view-profile/{{ friend.id }}" class="button friend-details" >view profile</a>
+    </div>
+</div>

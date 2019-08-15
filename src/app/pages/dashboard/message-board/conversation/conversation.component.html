@@ -1,0 +1,20 @@
+<div class="conversation-window">
+    <div class="conversation-header {{ convo.type }}">
+        <span class="spacer"></span>
+        <span>{{ messages.getMessangerName(convo.members) }}</span>
+        <span class="close" (click)="closeConversation()">X</span>
+    </div>
+    
+    <div class="convo-display">
+        <div class="messages" *ngFor="let message of convo.messages; let i = index">
+        <span class="bubble sent" *ngIf="message.authorId === user.id">{{ message.body }}</span>
+        <span class="bubble recieved" *ngIf="message.authorId !== user.id">{{ message.body }}</span>
+        </div>
+    </div>
+    
+    <form class="send-form">
+        <input type="text" name="body" [(ngModel)]="message.body">
+        <button class="send" (click)="post()">Send</button>
+    </form>
+    
+</div>

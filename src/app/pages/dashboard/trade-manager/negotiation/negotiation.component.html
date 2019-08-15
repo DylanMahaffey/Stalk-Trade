@@ -1,0 +1,8 @@
+<h3>Negotiations</h3>
+<ul>
+  <li> - adjust trade details (quantities, dates, crops, ect...)</li>
+  <li> - when trade is agreed the crop being traded will subtract from your quantity and the recieving crop will be added to recieving crops list</li>
+</ul>
+
+<a routerLink="dashboard" class="button" (click)="trades.acceptTerms(trade, userId)">Accept Terms</a>
+<a routerLink="dashboard" class="button" (click)="trades.acceptTerms(trade, 1)">fake Terms</a>

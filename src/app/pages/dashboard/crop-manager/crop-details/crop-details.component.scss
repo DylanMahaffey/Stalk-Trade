@@ -1,0 +1,24 @@
+.container{
+    display: flex;
+    justify-content: space-around;
+
+.crop-img{
+    width: 45%;
+}}
+.crop-info{
+    width: 300px;
+}
+.crop-info li{
+    list-style-type: square;
+    margin-left: 20px;
+}
+
+.trade-display{
+    width: 100%;
+    display: flex;
+    overflow-x: auto;
+}
+.trade{
+    margin: 10px;
+    min-width: 200px;
+}

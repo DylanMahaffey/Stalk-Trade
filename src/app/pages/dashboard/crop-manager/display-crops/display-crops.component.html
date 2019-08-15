@@ -1,0 +1,28 @@
+<h3>My Crops</h3>
+<button class="button" (click)="filter('herb')">Herbs</button>
+<button class="button" (click)="filter('vegetable')">Vegetables</button>
+<button class="button" (click)="clearFilter()">All</button>
+<div class="crops-display">
+  <a class="add-card" routerLink="add">
+    <img class="add-image" src="../../../../../assets/Images/icons8-add-new-96.png" alt="add">
+  </a>
+
+  <div class="crop-card" *ngFor="let crop of userCrops">
+    <p>{{ crop.cropName }} </p>
+    <img class="crop-image" src="{{ crop.imgSrc }}" alt="{{ crop.variety }} {{ crop.catagory }}">
+    <a routerLink="./details/{{ crop.id }}" class="button crop-details">Details</a>
+  </div>
+</div>
+<br>
+<h3>Watch List</h3>
+<div class="crops-display">
+  <div class="add-card">
+    <img class="add-image" src="../../../../../assets/Images/icons8-google-web-search-100.png" alt="add">
+  </div>
+
+  <div class="crop-card" *ngFor="let crop of crops.watchList">
+    <p>{{ crop.cropName }}</p>
+    <img class="crop-image" src="{{ crop.imgSrc }}" alt="{{ crop.variety }} {{ crop.catagory }}">
+    <a routerLink="./details/{{ crop.id }}" class="button crop-details">Details</a>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+<div class="message-board">
+
+    <div class="message-display">
+      <ng-container  *ngFor="let id of messages.openMessages">
+        <div @rise>
+          <st-conversation [id]="id" @rise></st-conversation>
+        </div>
+      </ng-container>
+    </div>
+
+
+
+  <div class="conversations-list">
+      <ul class="conversations-nav">
+        <a class="private" (click)="conversationsList = 'friends'">Friends</a>
+        <a class="group" (click)="conversationsList = 'groups'">Grops</a>
+        <a class="trade" (click)="conversationsList = 'trades'">Trades</a>
+      </ul>
+
+      <div class="display-conversations">
+
+        <st-friends *ngIf="conversationsList === 'friends'"></st-friends>
+        <st-groups *ngIf="conversationsList === 'groups'"></st-groups>
+        <st-trades *ngIf="conversationsList === 'trades'"></st-trades>
+
+      </div>
+  </div>  
+</div>

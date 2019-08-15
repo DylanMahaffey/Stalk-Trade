@@ -1,0 +1,33 @@
+<ng-container *ngIf="user">
+    <h2>{{ user.firstName }} {{ user.lastName }}</h2>
+    <img class="profile-pic" src="../../../../assets/Images/icons8-user-64.png" alt="anon"><br>
+    Crops Rating:    <div class="ratings">
+                        <img class="ratingStar"  
+                            *ngFor="let dummy of ' '.repeat(starCount(user.cropsRating)).split('')" 
+                            src="../../../../assets/Images/gold_star.svg.png" alt="rating star">
+                     </div> 
+    Business Rating: <div class="ratings">
+                        <img class="ratingStar" 
+                        *ngFor="let dummy of ' '.repeat(starCount(user.businessRating)).split('')" 
+                        src="../../../../assets/Images/gold_star.svg.png" alt="rating star">
+                     </div>
+    
+
+    <h4>Friends</h4>
+    <div class="container">
+            <div class="card" *ngFor="let friend of friends">
+                <p>{{ friend.firstName }} {{ friend.lastName }}</p>
+                <img class="card-image" src="../../../../assets/Images/icons8-user-64.png" alt="anon">
+                <a routerLink="../{{ friend.id }}" class="button details" >view profile</a>
+            </div>
+    </div>
+    
+    <h4>Crops</h4>
+    <div class="container">
+            <div class="card" *ngFor="let crop of crops">
+                <p>{{ crop.cropName }}</p>
+                <img class="card-image" src="{{ crop.imgSrc }}" alt="{{ crop.cropName }}">
+                <a routerLink="../{{ crop.id }}" class="button details" >view crop</a>
+            </div>
+    </div>
+</ng-container>

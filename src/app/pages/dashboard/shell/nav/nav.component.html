@@ -1,0 +1,20 @@
+<nav>
+    <ul>
+        <a routerLink="./">Home</a>
+        <a routerLink="./trade-manager">Trade Manager</a>
+        <a routerLink="./crop-manager">Crop Manager</a>
+    </ul>
+    <a routerLink="./"><img src="../../../../../assets/Images/icons8-plant-96.png" alt="Stalk Trade"></a>
+    <ul>
+        <a routerLink="./profile">Profile</a>
+        <a routerLink="./friends">Friends</a>
+        <a routerLink="./notifications">Notifications</a>
+    </ul>
+
+    <ul class="dropdown-menu">
+        <li id="hamburger" (click)="dropdown = true"  (clickOutside)="dropdown = false"><img src="../../../../../assets/Images/icons8-menu-50.png" alt="Menu" ></li>
+        <ul class="dropdown" *ngIf="dropdown">
+            <li class="drop-item" (click)="logOut()">Log Out</li>
+        </ul>
+    </ul>
+</nav>

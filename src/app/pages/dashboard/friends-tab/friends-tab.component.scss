@@ -1,0 +1,26 @@
+.container{
+    display: flex;
+}
+
+.friend-card{
+    border: 1px solid rgba(0, 0, 0, .4);
+    width: 200px;
+    height: 300px;
+    margin: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.friend-image{
+    width: 100%;
+    border-radius: 50%;
+}
+.friend-details{
+    text-align: center;
+    justify-self: flex-end;
+}
+.friend-details:hover{
+    background: rgba(0, 0, 0, .3);
+}

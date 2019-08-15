@@ -1,0 +1,21 @@
+<h2>{{ user.user.firstName }} {{ user.user.lastName }}</h2>
+<img class="profile-pic" src="../../../../assets/Images/icons8-user-64.png" alt="anon"><br>
+Crops Rating:    <div class="ratings">
+                    <img class="ratingStar"  
+                        *ngFor="let dummy of ' '.repeat(starCount(user.user.cropsRating)).split('')" 
+                        src="../../../../assets/Images/gold_star.svg.png" alt="rating star">
+                 </div> 
+Business Rating: <div class="ratings">
+                    <img class="ratingStar" 
+                    *ngFor="let dummy of ' '.repeat(starCount(user.user.businessRating)).split('')" 
+                    src="../../../../assets/Images/gold_star.svg.png" alt="rating star">
+                 </div>
+
+
+<div class="container">
+
+    <pre>{{ user.user | json }}</pre>
+    <div class="friends">
+
+    </div>
+</div>  

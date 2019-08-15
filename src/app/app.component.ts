@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { webSocket } from 'rxjs/webSocket'
 
 @Component({
   selector: 'st-root',
@@ -7,4 +8,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'stalk-trade';
+
 }

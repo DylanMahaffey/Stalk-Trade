@@ -1,0 +1,52 @@
+.message-board{
+    display: flex;
+    width: 100%;
+}
+
+.message-display{
+    position: fixed;
+    bottom: 0;
+    right: 400px;
+    max-width: calc(100% - 400px);
+    display: inline-flex;
+    flex-direction: row-reverse;
+    flex-wrap: nowrap;
+    overflow: auto;
+}
+
+.conversations-list{
+    width: 400px;
+    border: 1px solid rgba(0, 0, 0, .4);
+}
+
+.conversations-nav{
+    display: flex;
+}
+.conversations-nav a{
+    list-style-type: none;
+    padding: 10px 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 1); 
+    border-right: 1px solid rgba(0, 0, 0, .4); 
+    width: 100%;
+    text-align: center;
+    color: rgba(0, 0, 0, .7);
+}
+.private{
+    background-color: darkcyan;
+    color: white !important;
+}
+.group{
+    background-color: ghostwhite;
+}
+.trade{
+    background-color: chartreuse;
+}
+.conversations-nav a:hover{
+    background-color: tomato;
+    color: blanchedalmond;
+}
+
+.display-conversations{
+    width: 100%;
+    height: 100%;
+}

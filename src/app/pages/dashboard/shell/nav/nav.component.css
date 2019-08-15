@@ -1,0 +1,76 @@
+nav {
+  width: 100%;
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: lawngreen;
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+nav img {
+  margin: 0 20px;
+  height: 50px;
+  width: auto;
+}
+
+nav ul {
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+nav ul a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-decoration: none;
+  padding: 20px 40px;
+  width: 125px;
+  color: white;
+}
+
+nav ul a:hover {
+  background-color: tomato;
+  color: blanchedalmond;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 15px;
+  right: 2px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+#hamburger img {
+  width: 30px;
+  height: 30px;
+}
+
+.drop-item {
+  background: grey;
+  border: 1px solid rgba(0, 0, 0, 0.7);
+  padding: 7px;
+  width: 200px;
+}
+/*# sourceMappingURL=nav.component.css.map */

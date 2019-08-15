@@ -1,1 +1,55 @@
 /* You can add global styles to this file, and also import other style files */
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+body, html{
+    height: 100vh;
+    width: 100%;
+    
+}
+
+h1,h2,h3,h4,h5,h6{
+    font-family: 'Alegreya Sans SC', sans-serif;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+li{
+    list-style-type: none;
+}
+
+.button{
+    text-decoration: none;
+    border: 1px solid grey;
+    margin: 5px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: white;
+    color: black;
+    font-size: 15px;
+    line-height: 1;
+}
+.primary{
+    background-color: darkcyan;
+    color: white;
+}
+.buttons{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.modal{
+    background-color: rgba(0, 0, 0, .7);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

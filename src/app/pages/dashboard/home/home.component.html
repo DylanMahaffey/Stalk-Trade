@@ -1,0 +1,6 @@
+<ng-container *ngFor="let user of users">
+    <div *ngIf="user.id !== usersService.id">
+        {{ user.firstName }} {{ user.lastName }}
+        <button (click)="addFriend(user.id)">Add friend</button>
+    </div>
+</ng-container>

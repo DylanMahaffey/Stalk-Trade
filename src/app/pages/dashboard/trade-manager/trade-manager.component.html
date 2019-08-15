@@ -1,0 +1,122 @@
+<h2>Trade Manager</h2>
+<ul>
+  <li> - contemplating weather to add an option to purchase crops as well as trade</li>
+  <li> - completed negotiation and completed transaction are different. Transaction is the physical trade being complete. Negotiation is agreeing on the trade terms</li>
+</ul>
+
+<br>
+<h3>Recieved Offers</h3>
+
+<div class="trade-display">
+  <div *ngFor="let offer of recieved">
+    <div class="offer" *ngIf="!offer.accepted">
+      {{ offer.Offer.traderId }} is offering you {{ offer.Offer.quantity }} of their {{ offer.Offer.cropName }} for {{ offer.quantity }} of your {{ offer.cropName }} <br>
+      <a routerLink="offer/{{ offer.id }}" class="button">View Their Crop</a>
+      <hr><br>
+      {{ offer.Offer.offerMessage }}
+      <br>
+      <div class="buttons">
+          <button class="button primary" (click)="trades.acceptOffer(offer)">Accept</button> <button class="button">Deny</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<br>
+<h3>Sent Offers</h3>
+
+<div class="trade-display">
+  <div *ngFor="let offer of sent">
+    <div class="offer" *ngIf="!offer.accepted">
+      You offered {{ offer.Offer.traderName }} {{ offer.Offer.quantity }} of your {{ offer.Offer.cropName }} 
+      for {{ offer.quantity }} of {{ offer.user }}'s {{ offer.cropName }} <br>
+      <a routerLink="offer/{{ offer.id }}" class="button">View Their Crop</a>
+      <hr><br>
+      {{ offer.Offer.offerMessage }}
+      <br>
+      
+      <span *ngIf="!offer.accepted && !offer.denied">They have not responded to your offer yet.</span>
+      <span *ngIf="!offer.accepted && offer.denied">Your offer has been denied. {{ offer.offer.traderName }}: {{ offer.deniedMessage }}</span>
+      <button class="button" *ngIf="!offer.accepted && offer.denied">Make a new offer?</button>
+    </div>
+  </div>
+</div>
+
+
+<br>
+<h3>Negotiations</h3>
+
+<div class="trade-display">
+  <div *ngFor="let offer of allTrades">
+    <div class="offer" *ngIf="offer.accepted && !offer.Offer.terms || offer.accepted && !offer.terms">
+      {{offer.Offer.terms}}
+      {{ offer.Offer.traderId }} is offering you {{ offer.Offer.quantity }} of their {{ offer.Offer.cropName }}
+       for {{ offer.quantity }} of your {{ offer.cropName }} <br>      
+      <hr><br>
+      {{ offer.Offer.offerMessage }}
+      
+      <a routerLink="negotiation/{{ offer.id }}" class="button">Trade Details</a>
+    </div>
+  </div>
+</div>
+
+<br>
+<h3>Recieving Crops</h3>
+
+<div class="trade-display">
+  <ng-container *ngFor="let offer of allTrades">
+    <div *ngIf="offer.userId === user.user.id">
+      <div class="offer" *ngIf="offer.terms && offer.Offer.terms">
+        My Crop was queried
+        <br>      
+        <hr><br>
+        {{ offer.offerMessage }}
+        
+        <a routerLink="recieving/{{ offer.id }}" class="button">Trade Details</a>
+      </div>
+    </div>
+  
+
+    <div *ngIf="offer.Offer.traderId === user.user.id">
+      <div class="offer" *ngIf="offer.terms && offer.Offer.terms">
+        Their crop was queried
+        <br>      
+        <hr><br>
+        {{ offer.offerMessage }}
+        
+        <a routerLink="recieving/{{ offer.id }}" class="button">Trade Details</a>
+      </div>
+    </div>
+  </ng-container>
+</div>
+
+<br>
+<h3>Traded Crops</h3>
+
+<div class="trade-display">
+  <ng-container *ngFor="let offer of allTrades">
+    <div *ngIf="offer.userId === user.user.id">
+      <div class="offer" *ngIf="offer.terms && offer.Offer.terms">
+        My Crop was queried
+        <br>      
+        <hr><br>
+        {{ offer.offerMessage }}
+        
+        <a routerLink="recieving/{{ offer.id }}" class="button">Trade Details</a>
+      </div>
+    </div>
+  
+
+    <div *ngIf="offer.Offer.traderId === user.user.id">
+      <div class="offer" *ngIf="offer.terms && offer.Offer.terms">
+        Their crop was queried
+        <br>      
+        <hr><br>
+        {{ offer.offerMessage }}
+        
+        <a routerLink="recieving/{{ offer.id }}" class="button">Trade Details</a>
+      </div>
+    </div>
+  </ng-container>
+</div>

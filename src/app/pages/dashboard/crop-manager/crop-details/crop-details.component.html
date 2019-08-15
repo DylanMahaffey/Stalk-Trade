@@ -1,0 +1,45 @@
+<br><br>
+<div class="container">
+  <div class="crop-info">
+    <p>Type: {{ cropDetails?.cropType }}</p>
+    <p>Variety: {{ cropDetails?.variety }}</p>
+    <p>Catagory: {{ cropDetails?.catagory }}</p>
+  
+    <p>Observers: {{ cropDetails?.observers }}</p>
+    <hr>
+    <br>
+    <p>"{{ cropDetails?.details }}"</p>
+    <hr>
+    <br>
+    <p>Harvest Information</p>
+    <hr>
+    
+    <p>Harvest Date: {{ cropDetails?.harvestDate }}</p>
+    <p>Harvest Quantity: {{ cropDetails?.harvestQuantity }}</p>
+    <p>Remaining Quantity: {{ cropDetails?.remainingQuantity }}</p>
+    <p>Updates</p>
+    <ul>
+      <li *ngFor="let notes of cropDetails?.harvestNotes">"{{ notes }}"</li>
+    </ul>
+
+    <hr>
+    <br>
+    <p>Trades</p>
+    <hr><br>
+    <div class="trade-display">
+      <div class="trade" *ngFor="let trade of cropDetails?.tradeDeals">
+        <p>Pending: <span *ngIf="trade.pending">Incompleted</span><span *ngIf="!trade.pending">Completed</span></p>
+        <p>{{ trade.recieving.traderId }} <span *ngIf="trade.pending">is offering</span><span *ngIf="!trade.pending">traded their</span> {{ trade.recieving.recievingCropId }}</p>
+
+        <button class="button" (click)="setTrade(trade)">Details</button>
+      </div>
+    </div>
+
+  </div>
+
+  <img src="{{ cropDetails?.imgSrc }}" alt="{{ cropDetails?.cropName }}" class="crop-img">
+</div>
+
+<div class="modal" *ngIf="displayModal" (click)="closeModal()">
+    <!-- <st-trade-display [trade]="trade"></st-trade-display> -->
+</div>
